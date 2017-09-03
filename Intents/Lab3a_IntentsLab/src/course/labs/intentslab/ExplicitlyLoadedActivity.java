@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.view.View.OnCl
+
+
+ickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -47,12 +50,14 @@ public class ExplicitlyLoadedActivity extends Activity {
 		Log.i(TAG,"Entered enterClicked()");
 		
 		// TODO - Save user provided input from the EditText field
-
+		String editTextString = mEditText.getText().toString();
+	
 		// TODO - Create a new intent and save the input from the EditText field as an extra
-		
+		Intent explicityCallBackIntent = new Intent(this, ActivityLoader.class);
+		explicityCallBackIntent.putExtra("Explicity_Activity", editTextString);
 		// TODO - Set Activity's result with result code RESULT_OK
-		
+		setActivityForResult(RESULT_OK, explicitCallBackIntent);
 		// TODO - Finish the Activity
-
+		this.finish();		
 	}
 }
